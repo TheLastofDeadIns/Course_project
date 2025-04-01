@@ -15,7 +15,7 @@ def load_audio(file_path):
 
 
 def bandpass_filter(y, sample_rate, lowcut=1000, highcut=1450):
-    """Применяет полосовой фильтр 680-1000 Гц к сигналу."""
+    """Применяет полосовой фильтр к сигналу."""
     if sample_rate < 2 * highcut:
         raise ValueError(
             f"Частота дискретизации ({sample_rate} Гц) слишком мала. "
@@ -105,7 +105,7 @@ def hurst_exponent(time_series):
 
 def analyze_audio(file_path, m=3):
     """
-    Полный анализ аудиофайла в диапазоне 680-1000 Гц:
+    Полный анализ аудиофайла:
     1. Загрузка -> 2. Обрезка -> 3. Фильтрация -> 4. Анализ
     """
     try:
